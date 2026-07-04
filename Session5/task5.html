@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookMyShow Movie Detail</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #222;
+            margin: 0;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f4f4f4;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #e91e63;
+        }
+
+        button {
+            background-color: #f84464;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #d81b60;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode .container {
+            background-color: #1e1e1e;
+        }
+
+        .dark-mode h1 {
+            color: #ff6b81;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Avengers: Endgame</h1>
+
+        <p><strong>Genre:</strong> Action, Adventure, Sci-Fi</p>
+
+        <p><strong>Rating:</strong> ⭐ 4.8/5</p>
+
+        <p>
+            After the devastating events of Infinity War, the Avengers unite
+            once again to reverse Thanos' actions and restore balance to the universe.
+        </p>
+
+        <button onclick="toggleMode()">🌙 Toggle Light/Dark Mode</button>
+    </div>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>
