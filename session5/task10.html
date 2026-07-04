@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zomato Menu</title>
+</head>
+<body>
+
+<script>
+function showMenuItem(name, price) {
+    let div = document.createElement("div");
+
+    div.innerHTML = `<h3>${name}</h3><p>Price: ₹${price}</p>`;
+    div.style.border = "1px solid black";
+    div.style.padding = "10px";
+    div.style.margin = "10px";
+    div.style.width = "200px";
+
+    return div;
+}
+
+document.body.appendChild(showMenuItem("Pizza", 299));
+document.body.appendChild(showMenuItem("Burger", 199));
+document.body.appendChild(showMenuItem("Pasta", 249));
+</script>
+
+</body>
+</html>
