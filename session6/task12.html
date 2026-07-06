@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Now Playing</title>
+</head>
+<body>
+
+<h2>Now Playing: <span id="song-title">Kesariya</span></h2>
+
+<button onclick="changeSong()">Change Song</button>
+
+<script>
+let songs = ["Tum Hi Ho", "Apna Bana Le", "Kesariya", "Perfect"];
+let index = 0;
+
+function changeSong() {
+    index = (index + 1) % songs.length;
+    document.getElementById("song-title").innerHTML = songs[index];
+}
+</script>
+
+</body>
+</html>
