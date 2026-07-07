@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Object</title>
+</head>
+<body>
+
+<button id="cartBtn">Add to Cart</button>
+
+<script>
+let button = document.getElementById("cartBtn");
+
+button.addEventListener("click", showEvent);
+button.addEventListener("mouseover", showEvent);
+
+function showEvent(event) {
+    console.log("Type:", event.type);
+    console.log("X:", event.clientX);
+    console.log("Y:", event.clientY);
+}
+</script>
+
+</body>
+</html>

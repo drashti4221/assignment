@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Coordinates</title>
+</head>
+<body>
+
+<div id="box" style="width:400px;height:250px;border:2px solid black;">
+    Click Anywhere Here
+</div>
+
+<p id="result"></p>
+
+<script>
+document.getElementById("box").addEventListener("click", function(event) {
+    document.getElementById("result").innerHTML =
+    "X: " + event.clientX + " , Y: " + event.clientY;
+});
+</script>
+
+</body>
+</html>

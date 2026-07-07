@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add to Cart</title>
+</head>
+<body>
+
+<button id="cartBtn">Add to Cart</button>
+
+<h3>Cart</h3>
+<ul id="cart"></ul>
+
+<script>
+function addToCart() {
+    let li = document.createElement("li");
+    li.innerHTML = "Laptop";
+    document.getElementById("cart").appendChild(li);
+}
+
+document.getElementById("cartBtn").addEventListener("click", addToCart);
+</script>
+
+</body>
+</html>
