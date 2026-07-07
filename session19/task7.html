@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="name" placeholder="Playlist Name">
+<input id="desc" placeholder="Description">
+
+<button onclick="addPlaylist()">Add</button>
+
+<div id="list"></div>
+
+<script>
+
+let playlists=[];
+
+function addPlaylist(){
+
+playlists.push({
+name:name.value,
+description:desc.value
+});
+
+show();
+
+}
+
+function show(){
+
+list.innerHTML="";
+
+playlists.forEach(function(item,index){
+
+list.innerHTML+=`
+<p>
+<b>${item.name}</b> - ${item.description}
+
+<button onclick="editPlaylist(${index})">Edit</button>
+
+<button onclick="deletePlaylist(${index})">Delete</button>
+
+</p>
+`;
+
+});
+
+}
+
+function deletePlaylist(index){
+
+playlists.splice(index,1);
+
+show();
+
+}
+
+function editPlaylist(index){
+
+let newName=prompt("Enter New Playlist Name",playlists[index].name);
+
+let newDesc=prompt("Enter Description",playlists[index].description);
+
+playlists[index].name=newName;
+
+playlists[index].description=newDesc;
+
+show();
+
+}
+
+</script>
+
+</body>
+</html>

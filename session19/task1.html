@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Playlist</title>
+</head>
+<body>
+
+<h2>Create Playlist</h2>
+
+<input type="text" id="name" placeholder="Playlist Name">
+<br><br>
+
+<input type="text" id="description" placeholder="Description">
+<br><br>
+
+<button onclick="addPlaylist()">Add Playlist</button>
+
+<script>
+
+let playlists = [];
+
+function addPlaylist(){
+
+    let name = document.getElementById("name").value;
+    let description = document.getElementById("description").value;
+
+    playlists.push({
+        name: name,
+        description: description
+    });
+
+    console.log(playlists);
+
+}
+
+</script>
+
+</body>
+</html>

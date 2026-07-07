@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="list"></div>
+
+<script>
+
+let restaurants = [
+    {name:"Domino's", cuisine:"Pizza", rating:4.5},
+    {name:"Subway", cuisine:"Fast Food", rating:4.2},
+    {name:"Barbeque Nation", cuisine:"BBQ", rating:4.6}
+];
+
+function displayRestaurants(){
+
+    let output="";
+
+    restaurants.forEach(function(item,index){
+
+        output += `
+        <p>
+        ${item.name} - ${item.cuisine} - ⭐${item.rating}
+
+        <button onclick="deleteRestaurant(${index})">
+        Delete
+        </button>
+        </p>
+        `;
+
+    });
+
+    document.getElementById("list").innerHTML=output;
+}
+
+function deleteRestaurant(index){
+
+    restaurants.splice(index,1);
+
+    displayRestaurants();
+
+}
+
+displayRestaurants();
+
+</script>
+
+</body>
+</html>
