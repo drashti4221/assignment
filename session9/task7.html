@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zomato Favorite Restaurants</title>
+</head>
+<body>
+
+<h2>Favorite Restaurants</h2>
+
+<input type="text" id="restaurant" placeholder="Enter Restaurant Name">
+<button onclick="addRestaurant()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+     let restaurants = JSON.parse(localStorage.getItem("restaurants")) || [];
+
+displayRestaurants();
+
+function addRestaurant() {
+    let input = document.getElementById("restaurant");
+
+    if (input.value !== "" && restaurants.length < 3) {
+        restaurants.push(input.value);
+
+        localStorage.setItem("restaurants", JSON.stringify(restaurants));
+
+        input.value = "";
+
+        displayRestaurants();
+    }
+}
+
+function displayRestaurants() {
+    let list = document.getElementById("list");
+
+    list.innerHTML = "";
+
+    for (let i = 0; i < restaurants.length; i++) {
+        list.innerHTML += "<li>" + restaurants[i] + "</li>";
+    }
+}
+</script>
+
+</body>
+</html>

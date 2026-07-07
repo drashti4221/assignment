@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wishlist</title>
+</head>
+<body>
+
+<h2>Wishlist</h2>
+
+<ul id="wishlist"></ul>
+
+<script>
+   let products = [
+    { name: "Laptop", price: 50000 },
+    { name: "Mobile", price: 20000 },
+    { name: "Headphones", price: 1500 }
+];
+
+if (!localStorage.getItem("wishlist")) {
+    localStorage.setItem("wishlist", JSON.stringify(products));
+}
+
+  let wishlist = JSON.parse(localStorage.getItem("wishlist"));
+
+  let list = document.getElementById("wishlist");
+
+wishlist.forEach(function(item) {
+    list.innerHTML += `<li>${item.name} - ₹${item.price}</li>`;
+});
+</script>
+
+</body>
+</html>

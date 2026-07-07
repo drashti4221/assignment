@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Favorites</title>
+</head>
+<body>
+
+<h2>Favorite Restaurants</h2>
+
+<ul id="list"></ul>
+
+<button onclick="clearFavorites()">Clear Favorites</button>
+
+<script>
+    let restaurants = JSON.parse(localStorage.getItem("restaurants")) || [];
+
+displayRestaurants();
+
+function displayRestaurants() {
+    let list = document.getElementById("list");
+    list.innerHTML = "";
+
+    for (let i = 0; i < restaurants.length; i++) {
+        list.innerHTML += "<li>" + restaurants[i] + "</li>";
+    }
+}
+
+function clearFavorites() {
+    localStorage.removeItem("restaurants");
+    restaurants = [];
+    displayRestaurants();
+}
+</script>
+
+</body>
+</html>
