@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zomato Restaurant Manager</title>
+</head>
+<body>
+
+<h2>Add Restaurant</h2>
+
+<input type="text" id="name" placeholder="Restaurant Name"><br><br>
+<input type="text" id="cuisine" placeholder="Cuisine"><br><br>
+<input type="number" id="rating" placeholder="Rating"><br><br>
+
+<button onclick="addRestaurant()">Add Restaurant</button>
+
+<hr>
+
+<div id="list"></div>
+
+<script>
+
+let restaurants = [];
+
+function addRestaurant() {
+
+    restaurants.push({
+        name: document.getElementById("name").value,
+        cuisine: document.getElementById("cuisine").value,
+        rating: document.getElementById("rating").value
+    });
+
+    displayRestaurants();
+
+    document.getElementById("name").value = "";
+    document.getElementById("cuisine").value = "";
+    document.getElementById("rating").value = "";
+}
+
+function displayRestaurants() {
+
+    let output = "";
+
+    restaurants.forEach(function(item, index) {
+
+        output += `
+        <p>
+            <b>${item.name}</b><br>
+            Cuisine: ${item.cuisine}<br>
+            Rating: ${item.rating}<br>
+
+            <button onclick="editRestaurant(${index})">Edit</button>
+
+            <button onclick="deleteRestaurant(${index})">Delete</button>
+        </p>
+        <hr>
+        `;
+    });
+
+    document.getElementById("list").innerHTML = output;
+}
+
+function deleteRestaurant(index) {
+
+    restaurants.splice(index, 1);
+    displayRestaurants();
+}
+
+function editRestaurant(index) {
+
+    let newName = prompt("Restaurant Name", restaurants[index].name);
+    let newCuisine = prompt("Cuisine", restaurants[index].cuisine);
+    let newRating = prompt("Rating", restaurants[index].rating);
+
+    restaurants[index].name = newName;
+    restaurants[index].cuisine = newCuisine;
+    restaurants[index].rating = newRating;
+
+    displayRestaurants();
+}
+
+</script>
+
+</body>
+</html>

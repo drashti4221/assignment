@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Restaurant</title>
+</head>
+<body>
+
+<input id="name" placeholder="Restaurant Name">
+<input id="cuisine" placeholder="Cuisine">
+<input id="rating" placeholder="Rating">
+
+<button onclick="addRestaurant()">Add</button>
+
+<script>
+
+let restaurants=[];
+
+function addRestaurant(){
+
+restaurants.push({
+
+name:name.value,
+cuisine:cuisine.value,
+rating:rating.value
+
+});
+
+console.log(restaurants);
+
+}
+
+</script>
+
+</body>
+</html>

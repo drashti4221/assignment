@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="name" placeholder="Restaurant Name">
+<input id="cuisine" placeholder="Cuisine">
+<input id="rating" placeholder="Rating">
+
+<button onclick="saveRestaurant()">Save</button>
+
+<div id="list"></div>
+
+<script>
+
+let restaurants = [
+    {name:"Domino's", cuisine:"Pizza", rating:"4.5"},
+    {name:"Subway", cuisine:"Fast Food", rating:"4.2"}
+];
+
+let editIndex = -1;
+
+function display(){
+
+    let output="";
+
+    restaurants.forEach(function(item,index){
+
+        output += `
+        <p>
+        ${item.name} - ${item.cuisine} - ⭐${item.rating}
+
+        <button onclick="editRestaurant(${index})">
+        Edit
+        </button>
+        </p>
+        `;
+
+    });
+
+    list.innerHTML=output;
+
+}
+
+function editRestaurant(index){
+
+    editIndex=index;
+
+    name.value=restaurants[index].name;
+    cuisine.value=restaurants[index].cuisine;
+    rating.value=restaurants[index].rating;
+
+}
+
+function saveRestaurant(){
+
+    if(editIndex!=-1){
+
+        restaurants[editIndex].name=name.value;
+        restaurants[editIndex].cuisine=cuisine.value;
+        restaurants[editIndex].rating=rating.value;
+
+        editIndex=-1;
+
+        name.value="";
+        cuisine.value="";
+        rating.value="";
+
+        display();
+    }
+
+}
+
+display();
+
+</script>
+
+</body>
+</html>
