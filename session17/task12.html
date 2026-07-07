@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="cards">
+
+    <div class="card">
+        Product 1
+        <button class="remove-btn">X</button>
+    </div>
+
+    <div class="card">
+        Product 2
+        <button class="remove-btn">X</button>
+    </div>
+
+</div>
+
+<script>
+
+let cards=document.getElementById("cards");
+
+cards.addEventListener("click",function(e){
+
+    if(e.target.classList.contains("remove-btn")){
+        e.target.parentElement.remove();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

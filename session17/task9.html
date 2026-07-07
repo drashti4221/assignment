@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="addBtn">Add Random Product</button>
+
+<div id="cart">
+    <div class="card">
+        Laptop
+        <span class="remove">X</span>
+    </div>
+</div>
+
+<script>
+
+let cart = document.getElementById("cart");
+
+document.getElementById("addBtn").addEventListener("click", function(){
+
+    let products = ["Mouse","Keyboard","Monitor","Headphones"];
+
+    let random = products[Math.floor(Math.random()*products.length)];
+
+    let card = document.createElement("div");
+
+    card.className = "card";
+
+    card.innerHTML = `${random} <span class="remove">X</span>`;
+
+    cart.appendChild(card);
+
+});
+
+cart.addEventListener("click", function(e){
+
+    if(e.target.classList.contains("remove")){
+        e.target.parentElement.remove();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

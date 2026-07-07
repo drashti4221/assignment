@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song Cards</title>
+    <style>
+        .card{
+            width:250px;
+            border:1px solid black;
+            padding:10px;
+            margin:10px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .remove{
+            color:red;
+            cursor:pointer;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+<div id="songs">
+    <div class="card">
+        <span>Perfect</span>
+        <span class="remove">X</span>
+    </div>
+
+    <div class="card">
+        <span>Believer</span>
+        <span class="remove">X</span>
+    </div>
+
+    <div class="card">
+        <span>Faded</span>
+        <span class="remove">X</span>
+    </div>
+</div>
+
+<script>
+let songs = document.getElementById("songs");
+
+songs.addEventListener("click", function(event){
+
+    if(event.target.classList.contains("remove")){
+        event.target.parentElement.remove();
+    }
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card{
+    border:1px solid black;
+    padding:10px;
+    margin:10px;
+}
+</style>
+</head>
+<body>
+
+<button id="addBtn">Add Product</button>
+
+<div id="wishlist">
+    <div class="card">
+        Laptop
+        <button class="remove">Remove</button>
+    </div>
+</div>
+
+<script>
+
+let wishlist=document.getElementById("wishlist");
+
+document.getElementById("addBtn").addEventListener("click",function(){
+
+    let card=document.createElement("div");
+
+    card.className="card";
+
+    card.innerHTML="New Product <button class='remove'>Remove</button>";
+
+    wishlist.appendChild(card);
+
+});
+
+wishlist.addEventListener("click",function(e){
+
+    if(e.target.classList.contains("remove")){
+        e.target.parentElement.remove();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

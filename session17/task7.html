@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container">
+    <div class="story">
+        Story A
+        <button class="remove">X</button>
+    </div>
+
+    <div class="story">
+        Story B
+        <button class="remove">X</button>
+    </div>
+</div>
+
+<script>
+
+document.getElementById("container").addEventListener("click", function(e){
+
+    if(e.target.classList.contains("remove")){
+        e.target.parentElement.remove();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

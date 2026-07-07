@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favorite Songs</title>
+</head>
+<body>
+
+<ul id="songList">
+    <li>Perfect <button>Remove</button></li>
+    <li>Believer <button>Remove</button></li>
+    <li>Faded <button>Remove</button></li>
+</ul>
+
+<script>
+
+let list=document.getElementById("songList");
+
+list.addEventListener("click",function(e){
+
+    if(e.target.tagName==="BUTTON"){
+        e.target.parentElement.remove();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
