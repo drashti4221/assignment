@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     let products = [
+    { name: "Laptop", price: 50000 },
+    { name: "Mouse", price: 700 },
+    { name: "Keyboard", price: 1500 }
+];
+
+let productList = products.map(product =>
+    `Product: ${product.name}, Price: ₹${product.price}`
+);
+
+console.log(productList);
+    </script>
+</body>
+</html>

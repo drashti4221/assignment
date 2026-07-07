@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let posts = [
+    { likes: 150 },
+    { likes: 300 },
+    { likes: 450 }
+];
+
+let totalLikes = posts.reduce((total, post) => {
+    return total + post.likes;
+}, 0);
+
+console.log("Total Likes:", totalLikes);
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let orders = [
+    { clicks: 10 },
+    { clicks: 25 },
+    { clicks: 15 },
+    { clicks: 20 }
+];
+
+let totalClicks = orders.reduce((total, order) => {
+    return total + order.clicks;
+}, 0);
+
+console.log("Total Clicks:", totalClicks);
+    </script>
+</body>
+</html>
