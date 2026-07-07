@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filter Albums</title>
+</head>
+<body>
+
+<script>
+fetch("https://jsonplaceholder.typicode.com/albums")
+    .then(response => response.json())
+    .then(albums => {
+
+        let filteredAlbums = albums.filter(album => album.userId === 2);
+
+        filteredAlbums.forEach(album => {
+            console.log(album.title);
+        });
+
+    })
+    .catch(error => console.log(error));
+</script>
+
+</body>
+</html>

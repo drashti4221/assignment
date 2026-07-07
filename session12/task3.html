@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GET Request</title>
+</head>
+<body>
+
+<script>
+fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "GET"
+})
+.then(response => response.json())
+.then(posts => {
+    for (let i = 0; i < 5; i++) {
+        console.log(posts[i].title);
+    }
+})
+.catch(error => console.log(error));
+</script>
+
+</body>
+</html>
