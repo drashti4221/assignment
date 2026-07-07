@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Status</title>
+</head>
+<body>
+
+<script>
+  function getOrderStatus(orderId) {
+
+    return new Promise(function(resolve, reject) {
+
+        setTimeout(function() {
+
+            if (orderId % 2 === 0) {
+                resolve("Order delivered");
+            } else {
+                reject("Order not found");
+            }
+
+        }, 1500);
+
+    });
+
+}
+
+getOrderStatus(2)
+.then(function(result) {
+    console.log(result);
+})
+.catch(function(error) {
+    console.log(error);
+});
+
+getOrderStatus(3)
+.then(function(result) {
+    console.log(result);
+})
+.catch(function(error) {
+    console.log(error);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading Feed</title>
+</head>
+<body>
+
+<h2 id="message">Please wait...</h2>
+
+<script>
+setTimeout(function () {
+    document.getElementById("message").innerHTML = "Loading your feed...";
+
+    setTimeout(function () {
+        document.getElementById("message").innerHTML = "Feed loaded!";
+    }, 2000);
+
+}, 2000);
+</script>
+
+</body>
+</html>

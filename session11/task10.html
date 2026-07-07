@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Search</title>
+</head>
+<body>
+
+<script>
+const products = [
+    "Laptop",
+    "Mouse",
+    "Keyboard",
+    "Laptop Bag"
+];
+
+// Callback Version
+function searchProduct(term, callback) {
+
+    setTimeout(function() {
+
+        let result = products.filter(function(product) {
+            return product.toLowerCase().includes(term.toLowerCase());
+        });
+
+        callback(result);
+
+    }, 1000);
+
+}
+
+searchProduct("lap", function(result) {
+    console.log("Callback:", result);
+});
+
+// Promise Version
+function searchProductPromise(term) {
+
+    return new Promise(function(resolve) {
+
+        setTimeout(function() {
+
+            let result = products.filter(function(product) {
+                return product.toLowerCase().includes(term.toLowerCase());
+            });
+
+            resolve(result);
+
+        }, 1000);
+
+    });
+
+}
+
+searchProductPromise("lap")
+.then(function(result) {
+    console.log("Promise:", result);
+});
+</script>
+
+</body>
+</html>

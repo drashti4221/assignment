@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song Lyrics Callback</title>
+</head>
+<body>
+
+<script>
+function fetchSongLyrics(song, callback) {
+    setTimeout(function () {
+        let lyrics = "Lyrics of " + song + ": La la la...";
+        callback(lyrics);
+    }, 2000);
+}
+
+fetchSongLyrics("Perfect", function (lyrics) {
+    console.log(lyrics);
+});
+</script>
+
+</body>
+</html>
