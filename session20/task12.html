@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zomato Review Form</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            margin:40px;
+        }
+
+        input, textarea{
+            width:300px;
+            padding:8px;
+            margin:8px 0;
+        }
+
+        button{
+            padding:8px 20px;
+        }
+
+        #message{
+            margin-top:10px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Add Review</h2>
+
+<input type="number" id="rating" placeholder="Rating (1 to 5)">
+<br>
+
+<textarea id="review" placeholder="Write your review"></textarea>
+<br>
+
+<button onclick="submitReview()">Submit</button>
+
+<p id="message"></p>
+
+<script>
+
+function submitReview(){
+
+    let rating = Number(document.getElementById("rating").value);
+    let review = document.getElementById("review").value;
+    let message = document.getElementById("message");
+
+    message.style.color = "red";
+
+    if(review.trim() === ""){
+        message.innerHTML = "Review cannot be empty.";
+        return;
+    }
+
+    if(rating < 1 || rating > 5){
+        message.innerHTML = "Rating must be between 1 and 5.";
+        return;
+    }
+
+    message.style.color = "green";
+    message.innerHTML = "Review submitted successfully!";
+
+    document.getElementById("rating").value = "";
+    document.getElementById("review").value = "";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Review</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        textarea{
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+        }
+
+        button{
+            margin-top: 10px;
+            padding: 8px 20px;
+        }
+
+        #message{
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Zomato Add Review</h2>
+
+<textarea id="review" placeholder="Write your review..."></textarea>
+<br>
+
+<button onclick="submitReview()">Submit Review</button>
+
+<p id="message"></p>
+
+<script>
+
+function submitReview(){
+
+    let review = document.getElementById("review").value;
+
+    if(review.trim() === ""){
+
+        document.getElementById("message").innerHTML = "Review cannot be empty!";
+        return;
+
+    }
+
+    document.getElementById("message").style.color = "green";
+    document.getElementById("message").innerHTML = "Review submitted successfully!";
+
+    document.getElementById("review").value = "";
+
+}
+
+</script>
+
+</body>
+</html>

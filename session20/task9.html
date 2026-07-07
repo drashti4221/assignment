@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Followers</title>
+</head>
+<body>
+
+<h2>Followers List</h2>
+
+<input type="text" id="name" placeholder="Enter follower name">
+<button onclick="addFollower()">Add Follower</button>
+
+<p id="message"></p>
+
+<script>
+
+let followers = [];
+
+function addFollower(){
+
+    let name = document.getElementById("name").value;
+
+    if(name.trim() === ""){
+        document.getElementById("message").innerHTML = "Please enter a valid name.";
+        document.getElementById("message").style.color = "red";
+        return;
+    }
+
+    followers.push(name);
+
+    document.getElementById("message").innerHTML =
+        "Follower added successfully!<br><br>" +
+        followers.join(", ");
+
+    document.getElementById("message").style.color = "green";
+
+    document.getElementById("name").value = "";
+}
+
+</script>
+
+</body>
+</html>
