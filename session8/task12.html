@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let movies = [
+  {
+    title: "Inception",
+    year: 2010,
+    rating: {
+      imdb: 8.8,
+      rottenTomatoes: 87
+    }
+  },
+  {
+    title: "Avengers: Endgame",
+    year: 2019,
+    rating: {
+      imdb: 8.4,
+      rottenTomatoes: 94
+    }
+  },
+  {
+    title: "3 Idiots",
+    year: 2009,
+    rating: {
+      imdb: 8.4,
+      rottenTomatoes: 100
+    }
+  }
+];
+
+for (let i = 0; i < movies.length; i++) {
+  console.log("Movie:", movies[i].title);
+  console.log("IMDb Rating:", movies[i].rating.imdb);
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let playlists = [
+  {
+    name: "Top Hits",
+    creator: "Spotify",
+    numberOfSongs: 50
+  },
+  {
+    name: "Chill Vibes",
+    creator: "Drashti",
+    numberOfSongs: 30
+  },
+  {
+    name: "Workout Mix",
+    creator: "Fitness Hub",
+    numberOfSongs: 40
+  }
+];
+
+playlists.splice(1, 1, {
+  name: "Travel Tunes",
+  creator: "Rahul",
+  numberOfSongs: 25
+});
+
+console.log(playlists);
+    </script>
+</body>
+</html>
