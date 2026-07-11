@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Responsive Card</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f1f3f6;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+display:flex;
+width:500px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+.card img{
+width:180px;
+height:180px;
+margin-right:20px;
+}
+
+button{
+padding:10px 20px;
+background:#2874F0;
+color:white;
+border:none;
+}
+
+@media(max-width:600px){
+
+.card{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.card img{
+
+margin:0 auto 20px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="https://www.beatsbydre.com/content/dam/beats/web/product/headphones/solo4-wireless/pdp/product-carousel/cloud-pink/pink-01-solo4.jpg">
+
+<div>
+
+<h2>Wireless Headphones</h2>
+
+<p>Bluetooth Headphones</p>
+
+<h3 style="color:green;">₹8999</h3>
+
+<button>Add to Cart</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
